@@ -6,7 +6,9 @@
 - 发送钉钉消息
 - 打开和访问浏览器
 
-![自定义标题](show.gif)
+![自定义标题](assets/AutoWechat.gif)
+
+![自定义标题](assets/AutoBrowser.gif)
 
 
 

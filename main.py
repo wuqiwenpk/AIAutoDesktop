@@ -7,6 +7,7 @@ from utils.tools import tools, tools_map
 # 访问：https://platform.deepseek.com/api_keys
 # ################### ApiKey #########################
 apikey = "your apikey"
+
 # ################### ApiKey #########################
 
 
@@ -33,6 +34,7 @@ def chat(message: str):
 
 def call_function(call_info: dict):
     function_name = call_info["name"]
+    print("call function: {}".format(function_name))
     function_arguments = json.loads(call_info["arguments"])
     callback = tools_map[function_name]
     callback(**function_arguments)
@@ -43,9 +45,9 @@ def start():
         message = input(
             "请输入问题后按回车："
         )
-        print("等待大模型结果...")
+        print("Wait Api Result...")
         result = chat(message=message)
-        print(result)
+        # print(result)
         call_info = result["choices"][0]["message"]["tool_calls"][0]["function"]
         call_function(call_info)
 
